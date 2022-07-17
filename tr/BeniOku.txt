@@ -1,0 +1,22 @@
+Dosya Yapısı
+------------------------
+-durak54		//Ana dosyadır. Sunucuya atarken 'tr' adında atılırsa daha az sorun çıkartır.
+   -app			//Customer için kullanılan klasördür. Aynı zamanda init işlemleri burada yapılır.
+      -classes
+      -controller	//burada controller ve view fonksiyonları: *site_url('controller_adi') ve *view('view_adi'). driver public url ise *public_url('public_adi')
+			//driver klasörüne geçiş driver.php dosyasından sağlanır. güvenli post alma: post('post_adi'). güvenli get alma: get('get_adi').
+      -helper
+      -views
+      -config.php*
+      -db.php*		//Bu 3 dosyadaki sabitlerin sunucuya göre değişmesi gerekir.
+      -init.php*
+   -driver
+      -controller	//burada controller ve view fonksiyonları: driver_url('controller_adi') ve driver_view('view_adi'). driver public url ise driver_public_url('public_adi')
+      -views
+   -public
+      -customer
+      -driver
+
+NOT: main.js urller statiktir. Sunucuda değişmesi gerekiyor.
+NOT: Sunucuda sorun çıkarsa, jsden post edilen sayfada herhangi bir fonksiyon veya class çalışmaz. Çözüm olarak, classtaki fonksiyonları direk post edilen sayfada
+yazılabilir.
